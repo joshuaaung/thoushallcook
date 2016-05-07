@@ -137,3 +137,14 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/thoushallcook/index.php?r=ingredient/view.php
 ---
+2016/05/07 13:42:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in /var/www/yii_framework/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CController.php(270): CController->missingAction('pages')
+#1 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('pages')
+#2 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/pages')
+#3 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/thoushallcook/index.php?r=site/pages&view=about
+HTTP_REFERER=http://128.199.144.161/thoushallcook/
+---

@@ -10,6 +10,6 @@ return array(
 	'connectionString' => 'mysql:host=localhost;dbname=cookbook_db',
 	'emulatePrepare' => true,
 	'username' => 'root',
-	'password' => 'oDD-!#%&(!!',
+	'password' => '1234',
 	'charset' => 'utf8',
 );
