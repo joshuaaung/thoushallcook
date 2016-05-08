@@ -77,44 +77,150 @@ class RecipeController extends Controller
 	{
 
 		$model=new Recipe;
-		$ingredient=new Ingredient;
+		$ingredientModels = [];
+		$quantityModels = [];
+		$quantity=new Quantity;
+		$mapping=new RecipeIngredientQuantityMapping;
+		
 		$ingredients = Ingredient::model()->findAll(); //get all the existing ingredients
+		$quantities = Quantity::model()->findAll(); //get all the existing quantities
 
-		$found = false;
+		$found_ingredient = false;
+		$found_quantity = false;
+		
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
+		//$this->performAjaxValidation($ingredient);
+		//$this->performAjaxValidation($quantity);
 
+		
+		/*Multiple Ingredient inputs*/
+		if(isset($_POST['Ingredient'])){
+			foreach($_POST['Ingredient'] as $ingredientModel) {
+				$ingredient = new Ingredient;
+				$ingredient->attributes = $ingredientModel;
+
+				foreach($ingredients as $item) {
+					if(strcasecmp($item->name, $ingredient->name) == 0) {
+						$found_ingredient = true;
+						$ingredient = $item; //there is old record. Assign it to the $ingredient
+						break;
+					}
+				}
+
+				if(!$this->hasDuplicate($ingredientModels, $ingredient)) {
+					$ingredientModels[] = $ingredient;
+
+					if(!$found_ingredient) {
+						$ingredient->save(); //new ingredient! save it
+					} 
+				}
+
+				$found_ingredient = false;
+			}
+		}
+
+		/*Multiple Quantity inputs*/
+		if(isset($_POST['Quantity'])){
+			foreach($_POST['Quantity'] as $quantityModel) {
+				$quantity = new Quantity;
+				$quantity->attributes = $quantityModel;
+
+				foreach($quantities as $item) {
+					if(strcasecmp($item->name, $quantity->name) == 0) {
+						$found_quantity = true;
+						$quantity = $item; //there is old record. Assign it to the $quantity
+						break;
+					}
+				} 
+
+				if(!$this->hasDuplicate($quantityModels, $quantity)) {
+					$quantityModels[] = $quantity;
+					
+					if(!$found_quantity) {
+						$quantity->save(); //new ingredient! save it
+					}
+				}
+				$found_quantity = false;
+			}
+		}
+
+        /*Single Ingredient input*/
+        /*
 		if(isset($_POST['Ingredient']))
 		{
 			$ingredient->attributes=$_POST['Ingredient']; //assign the input vattributes(only 'name' in this case), to the new $ingredient model
 
 			//iterate through old ingredient records to see if the input is a pre-existing one. This is to prevent duplicate ingredients
 			foreach($ingredients as $item) {
-				if($item->name === $ingredient->name) {
-					$found = true;
+				if(strcasecmp($item->name, $ingredient->name) == 0) {
+					$found_ingredient = true;
 					$ingredient = $item; //there is old record. Assign it to the $ingredient
 					break;
 				}
 			}
 
-			if($found) {
+			if(!$found_ingredient) {
 				$ingredient->save(); //new ingredient! save it
-			} else {
-				//
-			}
+			} 
 		}
+		*/
+		/*Single Quantity input*/
+		/*
+		if(isset($_POST['Quantity']))
+		{
+			$quantity->attributes=$_POST['Quantity']; //assign the input vattributes(only 'name' in this case), to the new $ingredient model
 
+			//iterate through old ingredient records to see if the input is a pre-existing one. This is to prevent duplicate ingredients
+			foreach($quantities as $item) {
+				if(strcasecmp($item->name, $quantity->name) == 0) {
+					$found_quantity = true;
+					$quantity = $item; //there is old record. Assign it to the $ingredient
+					break;
+				}
+			}
+
+			if(!$found_quantity) {
+				$quantity->save(); //new ingredient! save it
+			} 
+		}
+		*/
 		if(isset($_POST['Recipe']))
 		{
 			$model->attributes=$_POST['Recipe'];
-			if($model->save())
+			if($model->save()){
+				for ($i = 0; $i < count($ingredientModels); $i++){
+					if($ingredientModels[$i] != null && $quantityModels[$i] != null)
+						$this->createMapping($model->id, $ingredientModels[$i]->id, $quantityModels[$i]->id);
+				}
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-			'ingredient'=>$ingredient,
+			'ingredient'=>new Ingredient,
+			'quantity'=>new Quantity,
 		));
+	}
+
+	public function createMapping($recipe_id, $ingredient_id, $quantity_id) {
+		$mapping = new RecipeIngredientQuantityMapping;
+		$mapping->recipe_id = $recipe_id;
+		$mapping->ingredient_id = $ingredient_id;
+		$mapping->quantity_id = $quantity_id;
+
+		$mapping->save();
+	}
+
+	public function hasDuplicate($models, $model) {
+		foreach($models as $item) {
+			if(strcasecmp($item->name, $model->name) == 0) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**

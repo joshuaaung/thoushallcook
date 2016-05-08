@@ -25,11 +25,19 @@
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
-	<div class="row">
-        <?php echo $form->labelEx($ingredient,'Ingredient'); ?>
-        <?php echo $form->textField($ingredient,'name', array('size'=>30, 'maxlength'=>30)); ?>
-        <?php echo $form->error($ingredient,'name'); ?>
-    </div>
+	<?php for($i = 0; $i<5; $i++) { ?>
+		<div class="row">
+	        <?php echo $form->labelEx($ingredient,'['.$i.']'.'Ingredient '.($i+1)); ?>
+	        <?php echo $form->textField($ingredient,'['.$i.']'.'name', array('size'=>30, 'maxlength'=>30)); ?>
+	        <?php echo $form->error($ingredient,'['.$i.']'.'name'); ?>
+	    </div>
+
+	    <div class="row">
+	        <?php echo $form->labelEx($quantity,'['.$i.']'.'Quantity'); ?>
+	        <?php echo $form->textField($quantity,'['.$i.']'.'name', array('size'=>20, 'maxlength'=>20)); ?>
+	        <?php echo $form->error($quantity,'['.$i.']'.'name'); ?>
+	    </div>
+	<?php } ?>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
