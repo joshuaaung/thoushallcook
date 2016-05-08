@@ -1,6 +1,6 @@
 <?php
 
-class RecipeController extends Controller
+class RecipeIngredientQuantityMappingController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -33,11 +33,11 @@ class RecipeController extends Controller
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
-				'users'=>array('*'),
+				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('*'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -51,22 +51,9 @@ class RecipeController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$mappings = RecipeIngredientQuantityMapping::model()->findAll(array("condition"=>"recipe_id=$id","order"=>"id")); //Gather All the rows with recipe_id = this recipe id
-		$results = $this->extractData($mappings);
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
-			'results'=>$results,
 		));
-	}
-
-	public function extractData($mappings){
-		$results = array();
-		foreach ($mappings as $item) {
-			$ingredient = Ingredient::model()->findByPk($item->ingredient_id);
-			$quantity = Quantity::model()->findByPk($item->quantity_id);
-			array_push($results, $ingredient, $quantity);
-		}
-		return $results;
 	}
 
 	/**
@@ -75,45 +62,20 @@ class RecipeController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$model=new RecipeIngredientQuantityMapping;
 
-		$model=new Recipe;
-		$ingredient=new Ingredient;
-		$ingredients = Ingredient::model()->findAll(); //get all the existing ingredients
-
-		$found = false;
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Ingredient']))
+		if(isset($_POST['RecipeIngredientQuantityMapping']))
 		{
-			$ingredient->attributes=$_POST['Ingredient']; //assign the input vattributes(only 'name' in this case), to the new $ingredient model
-
-			//iterate through old ingredient records to see if the input is a pre-existing one. This is to prevent duplicate ingredients
-			foreach($ingredients as $item) {
-				if($item->name === $ingredient->name) {
-					$found = true;
-					$ingredient = $item; //there is old record. Assign it to the $ingredient
-					break;
-				}
-			}
-
-			if($found) {
-				$ingredient->save(); //new ingredient! save it
-			} else {
-				//
-			}
-		}
-
-		if(isset($_POST['Recipe']))
-		{
-			$model->attributes=$_POST['Recipe'];
+			$model->attributes=$_POST['RecipeIngredientQuantityMapping'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-			'ingredient'=>$ingredient,
 		));
 	}
 
@@ -129,9 +91,9 @@ class RecipeController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Recipe']))
+		if(isset($_POST['RecipeIngredientQuantityMapping']))
 		{
-			$model->attributes=$_POST['Recipe'];
+			$model->attributes=$_POST['RecipeIngredientQuantityMapping'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -160,7 +122,7 @@ class RecipeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Recipe');
+		$dataProvider=new CActiveDataProvider('RecipeIngredientQuantityMapping');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -171,10 +133,10 @@ class RecipeController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Recipe('search');
+		$model=new RecipeIngredientQuantityMapping('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Recipe']))
-			$model->attributes=$_GET['Recipe'];
+		if(isset($_GET['RecipeIngredientQuantityMapping']))
+			$model->attributes=$_GET['RecipeIngredientQuantityMapping'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -185,12 +147,12 @@ class RecipeController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Recipe the loaded model
+	 * @return RecipeIngredientQuantityMapping the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Recipe::model()->findByPk($id);
+		$model=RecipeIngredientQuantityMapping::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -198,11 +160,11 @@ class RecipeController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Recipe $model the model to be validated
+	 * @param RecipeIngredientQuantityMapping $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='recipe-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='recipe-ingredient-quantity-mapping-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

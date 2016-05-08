@@ -1,20 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "Recipe".
+ * This is the model class for table "Quantity".
  *
- * The followings are the available columns in table 'Recipe':
+ * The followings are the available columns in table 'Quantity':
  * @property integer $id
- * @property string $name
+ * @property integer $name
  */
-class Recipe extends CActiveRecord
+class Quantity extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'Recipe';
+		return 'Quantity';
 	}
 
 	/**
@@ -26,7 +26,7 @@ class Recipe extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('name', 'length', 'max'=>30),
+			array('name', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name', 'safe', 'on'=>'search'),
@@ -74,7 +74,7 @@ class Recipe extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
+		$criteria->compare('name',$this->name);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -85,7 +85,7 @@ class Recipe extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Recipe the static model class
+	 * @return Quantity the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

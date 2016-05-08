@@ -1,13 +1,13 @@
 <?php
-/* @var $this RecipeController */
-/* @var $model Recipe */
+/* @var $this QuantityController */
+/* @var $model Quantity */
 /* @var $form CActiveForm */
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'recipe-form',
+	'id'=>'quantity-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -20,16 +20,10 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Recipe Name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->textField($model,'name'); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
-
-	<div class="row">
-        <?php echo $form->labelEx($ingredient,'Ingredient'); ?>
-        <?php echo $form->textField($ingredient,'name', array('size'=>30, 'maxlength'=>30)); ?>
-        <?php echo $form->error($ingredient,'name'); ?>
-    </div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

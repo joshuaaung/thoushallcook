@@ -1,13 +1,13 @@
 <?php
-/* @var $this RecipeController */
-/* @var $model Recipe */
+/* @var $this RecipeIngredientQuantityMappingController */
+/* @var $model RecipeIngredientQuantityMapping */
 /* @var $form CActiveForm */
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'recipe-form',
+	'id'=>'recipe-ingredient-quantity-mapping-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -20,16 +20,22 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'Recipe Name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>30,'maxlength'=>30)); ?>
-		<?php echo $form->error($model,'name'); ?>
+		<?php echo $form->labelEx($model,'recipe_id'); ?>
+		<?php echo $form->textField($model,'recipe_id'); ?>
+		<?php echo $form->error($model,'recipe_id'); ?>
 	</div>
 
 	<div class="row">
-        <?php echo $form->labelEx($ingredient,'Ingredient'); ?>
-        <?php echo $form->textField($ingredient,'name', array('size'=>30, 'maxlength'=>30)); ?>
-        <?php echo $form->error($ingredient,'name'); ?>
-    </div>
+		<?php echo $form->labelEx($model,'ingredient_id'); ?>
+		<?php echo $form->textField($model,'ingredient_id'); ?>
+		<?php echo $form->error($model,'ingredient_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'quantity_id'); ?>
+		<?php echo $form->textField($model,'quantity_id'); ?>
+		<?php echo $form->error($model,'quantity_id'); ?>
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

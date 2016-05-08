@@ -6,9 +6,6 @@
  * The followings are the available columns in table 'Ingredient':
  * @property integer $id
  * @property string $name
- *
- * The followings are the available model relations:
- * @property Recipe[] $recipes
  */
 class Ingredient extends CActiveRecord
 {
@@ -44,7 +41,6 @@ class Ingredient extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'recipes' => array(self::HAS_MANY, 'Recipe', 'ingredient_1'),
 		);
 	}
 

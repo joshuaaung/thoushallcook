@@ -16,13 +16,41 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Recipe #<?php echo $model->id; ?></h1>
+<h1>View Recipe <b><?php echo $model->name; ?></b></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php 
+$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
 		'name',
-		'ingredient_1',
 	),
-)); ?>
+)); 
+
+$counter = 1;
+$ingredient_counter = 1;
+foreach ($results as $result){
+	if(($counter%2) != 0){
+		$this->widget('zii.widgets.CDetailView', array(
+			'data'=>$result,
+			'attributes'=>array(
+				array(
+			      'label' => 'Ingredient '.$ingredient_counter,
+			      'value' => $result->name,
+			    )
+			),
+		));
+		$ingredient_counter++;
+	} else {
+		$this->widget('zii.widgets.CDetailView', array(
+			'data'=>$result,
+			'attributes'=>array(
+				array(
+			      'label' => 'Quantity',
+			      'value' => $result->name,
+			    )
+			),
+		));
+	}
+	$counter++;
+}
+?>

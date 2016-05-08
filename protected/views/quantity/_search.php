@@ -1,6 +1,6 @@
 <?php
-/* @var $this RecipeController */
-/* @var $model Recipe */
+/* @var $this QuantityController */
+/* @var $model Quantity */
 /* @var $form CActiveForm */
 ?>
 
@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'name'); ?>
 	</div>
 
 	<div class="row buttons">
