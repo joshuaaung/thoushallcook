@@ -37,6 +37,12 @@
 	        <?php echo $form->textField($quantity,'['.$i.']'.'name', array('size'=>20, 'maxlength'=>20)); ?>
 	        <?php echo $form->error($quantity,'['.$i.']'.'name'); ?>
 	    </div>
+
+	    <div class="row">
+	        <?php echo $form->labelEx($measurement,'['.$i.']'.'Measurement'); ?>
+	        <?php echo $form->textField($measurement,'['.$i.']'.'name', array('size'=>20, 'maxlength'=>20)); ?>
+	        <?php echo $form->error($measurement,'['.$i.']'.'name'); ?>
+	    </div>
 	<?php } ?>
 
 	<div class="row buttons">

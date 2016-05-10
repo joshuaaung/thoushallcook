@@ -1,23 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "Recipe_Ingredient_Quantity_Mapping".
+ * This is the model class for table "Measurement".
  *
- * The followings are the available columns in table 'Recipe_Ingredient_Quantity_Mapping':
+ * The followings are the available columns in table 'Measurement':
  * @property integer $id
- * @property integer $recipe_id
- * @property integer $ingredient_id
- * @property integer $quantity_id
- * @property integer $measurement_id
+ * @property string $name
  */
-class RecipeIngredientQuantityMapping extends CActiveRecord
+class Measurement extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'Recipe_Ingredient_Quantity_Mapping';
+		return 'Measurement';
 	}
 
 	/**
@@ -28,11 +25,11 @@ class RecipeIngredientQuantityMapping extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('recipe_id, ingredient_id, measurement_id', 'required'),
-			array('recipe_id, ingredient_id, quantity_id, measurement_id', 'numerical', 'integerOnly'=>true),
+			array('name', 'required'),
+			array('name', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, recipe_id, ingredient_id, quantity_id, measurement_id', 'safe', 'on'=>'search'),
+			array('id, name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,10 +51,7 @@ class RecipeIngredientQuantityMapping extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'recipe_id' => 'Recipe',
-			'ingredient_id' => 'Ingredient',
-			'quantity_id' => 'Quantity',
-			'measurement_id' => 'Measurement',
+			'name' => 'Name',
 		);
 	}
 
@@ -80,10 +74,7 @@ class RecipeIngredientQuantityMapping extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('recipe_id',$this->recipe_id);
-		$criteria->compare('ingredient_id',$this->ingredient_id);
-		$criteria->compare('quantity_id',$this->quantity_id);
-		$criteria->compare('measurement_id',$this->measurement_id);
+		$criteria->compare('name',$this->name,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -94,7 +85,7 @@ class RecipeIngredientQuantityMapping extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return RecipeIngredientQuantityMapping the static model class
+	 * @return Measurement the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -1,15 +1,15 @@
 <?php
-/* @var $this RecipeIngredientQuantityMappingController */
-/* @var $model RecipeIngredientQuantityMapping */
+/* @var $this MeasurementController */
+/* @var $model Measurement */
 
 $this->breadcrumbs=array(
-	'Recipe Ingredient Quantity Mappings'=>array('index'),
+	'Measurements'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List RecipeIngredientQuantityMapping', 'url'=>array('index')),
-	array('label'=>'Create RecipeIngredientQuantityMapping', 'url'=>array('create')),
+	array('label'=>'List Measurement', 'url'=>array('index')),
+	array('label'=>'Create Measurement', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#recipe-ingredient-quantity-mapping-grid').yiiGridView('update', {
+	$('#measurement-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Recipe Ingredient Quantity Mappings</h1>
+<h1>Manage Measurements</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -41,15 +41,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'recipe-ingredient-quantity-mapping-grid',
+	'id'=>'measurement-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'recipe_id',
-		'ingredient_id',
-		'quantity_id',
-		'measurement_id',
+		'name',
 		array(
 			'class'=>'CButtonColumn',
 		),

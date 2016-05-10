@@ -21,5 +21,9 @@
 	<?php echo CHtml::encode($data->quantity_id); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('measurement_id')); ?>:</b>
+	<?php echo CHtml::encode($data->measurement_id); ?>
+	<br />
+
 
 </div>

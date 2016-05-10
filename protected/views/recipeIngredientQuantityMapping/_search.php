@@ -31,6 +31,11 @@
 		<?php echo $form->textField($model,'quantity_id'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'measurement_id'); ?>
+		<?php echo $form->textField($model,'measurement_id'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

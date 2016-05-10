@@ -1526,3 +1526,716 @@ Stack trace:
 REQUEST_URI=/thoushallcook/index.php?r=recipe/create
 in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (193)
 in /var/www/html/thoushallcook/index.php (13)
+2016/05/08 12:58:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in /var/www/yii_framework/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CController.php(270): CController->missingAction('pages')
+#1 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('pages')
+#2 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/pages')
+#3 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/thoushallcook/index.php?r=site/pages&view=about
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php
+---
+2016/05/08 22:58:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('controller/acti...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=controller/action
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:00:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/action".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('controller/acti...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=controller/action
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:00:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controller/addIngredientRow".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('controller/addI...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=controller/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:01:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "RecipeController/addIngredientRow".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('RecipeControlle...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=RecipeController/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:01:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "RecipeController/addIngredientRow".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('RecipeControlle...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=RecipeController/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:01:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "RecipeController/addIngredientRow".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('RecipeControlle...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=RecipeController/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:01:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "RecipeController/addIngredientRow".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('RecipeControlle...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=RecipeController/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:02:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "../../controllers/RecipeController/addIngredientRow".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('../../controlle...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=../../controllers/RecipeController/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:03:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "../../controllers/RecipeController/addIngredientRow".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('../../controlle...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=../../controllers/RecipeController/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:06:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "../../controllers/RecipeController/addIngredientRow".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('../../controlle...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=../../controllers/RecipeController/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:06:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "controllers/RecipeController".' in /var/www/yii_framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('controllers/Rec...')
+#1 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/thoushallcook/index.php?r=controllers/RecipeController
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:16:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in /var/www/yii_framework/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CController.php(270): CController->missingAction('pages')
+#1 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('pages')
+#2 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('site/pages')
+#3 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/thoushallcook/index.php?r=site/pages&view=about
+HTTP_REFERER=http://128.199.144.161/thoushallcook/
+---
+2016/05/08 23:56:59 [error] [php] Undefined variable: addressModel_1 (/var/www/html/thoushallcook/protected/controllers/RecipeController.php:154)
+Stack trace:
+#0 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): RecipeController->runAction()
+#1 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii_framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): RecipeController->filterAccessControl()
+#4 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii_framework/framework/web/CController.php(265): RecipeController->runActionWithFilters()
+#7 /var/www/yii_framework/framework/web/CWebApplication.php(282): RecipeController->run()
+#8 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/thoushallcook/index.php(13): CWebApplication->run()
+REQUEST_URI=/thoushallcook/index.php?r=recipe/create
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (154)
+in /var/www/html/thoushallcook/index.php (13)
+2016/05/08 23:57:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addIngredientRow".' in /var/www/yii_framework/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CController.php(270): CController->missingAction('addIngredientRo...')
+#1 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('addIngredientRo...')
+#2 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/addIngre...')
+#3 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/08 23:58:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addIngredientRow".' in /var/www/yii_framework/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CController.php(270): CController->missingAction('addIngredientRo...')
+#1 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('addIngredientRo...')
+#2 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/addIngre...')
+#3 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/addIngredientRow
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/09 00:18:06 [error] [php] Undefined index: Mesurement (/var/www/html/thoushallcook/protected/controllers/RecipeController.php:152)
+Stack trace:
+#0 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): RecipeController->runAction()
+#1 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii_framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): RecipeController->filterAccessControl()
+#4 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii_framework/framework/web/CController.php(265): RecipeController->runActionWithFilters()
+#7 /var/www/yii_framework/framework/web/CWebApplication.php(282): RecipeController->run()
+#8 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/thoushallcook/index.php(13): CWebApplication->run()
+REQUEST_URI=/thoushallcook/index.php?r=recipe/create
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (152)
+in /var/www/html/thoushallcook/index.php (13)
+2016/05/09 00:21:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /var/www/html/thoushallcook/protected/controllers/RecipeController.php:341
+Stack trace:
+#0 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(57): RecipeController->loadModel('55')
+#1 [internal function]: RecipeController->actionView('55')
+#2 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#3 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#4 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#14 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=55
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/09 00:22:29 [error] [php] Undefined offset: 3 (/var/www/html/thoushallcook/protected/controllers/RecipeController.php:231)
+Stack trace:
+#0 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): RecipeController->runAction()
+#1 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii_framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): RecipeController->filterAccessControl()
+#4 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii_framework/framework/web/CController.php(265): RecipeController->runActionWithFilters()
+#7 /var/www/yii_framework/framework/web/CWebApplication.php(282): RecipeController->run()
+#8 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/thoushallcook/index.php(13): CWebApplication->run()
+REQUEST_URI=/thoushallcook/index.php?r=recipe/create
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (231)
+in /var/www/html/thoushallcook/index.php (13)
+2016/05/09 00:27:05 [error] [php] Undefined offset: 3 (/var/www/html/thoushallcook/protected/controllers/RecipeController.php:231)
+Stack trace:
+#0 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): RecipeController->runAction()
+#1 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/yii_framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): RecipeController->filterAccessControl()
+#4 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii_framework/framework/web/CController.php(265): RecipeController->runActionWithFilters()
+#7 /var/www/yii_framework/framework/web/CWebApplication.php(282): RecipeController->run()
+#8 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /var/www/html/thoushallcook/index.php(13): CWebApplication->run()
+REQUEST_URI=/thoushallcook/index.php?r=recipe/create
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (231)
+in /var/www/html/thoushallcook/index.php (13)
+2016/05/09 03:32:21 [error] [php] Undefined variable: ingrediet (/var/www/html/thoushallcook/protected/controllers/RecipeController.php:68)
+Stack trace:
+#0 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#1 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): RecipeController->runAction()
+#4 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/yii_framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): RecipeController->filterAccessControl()
+#7 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/yii_framework/framework/web/CController.php(265): RecipeController->runActionWithFilters()
+#10 /var/www/yii_framework/framework/web/CWebApplication.php(282): RecipeController->run()
+#11 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /var/www/html/thoushallcook/index.php(13): CWebApplication->run()
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=59
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (68)
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (55)
+in /var/www/html/thoushallcook/index.php (13)
+2016/05/09 06:24:24 [error] [php] Illegal string offset 'type' (/var/www/yii_framework/framework/web/helpers/CHtml.php:514)
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CBaseController.php(95): RecipeController->renderInternal()
+#1 /var/www/yii_framework/framework/web/CController.php(869): RecipeController->renderFile()
+#2 /var/www/html/thoushallcook/protected/views/recipe/create.php(18): RecipeController->renderPartial()
+#3 /var/www/yii_framework/framework/web/CBaseController.php(126): require()
+#4 /var/www/yii_framework/framework/web/CBaseController.php(95): RecipeController->renderInternal()
+#5 /var/www/yii_framework/framework/web/CController.php(869): RecipeController->renderFile()
+#6 /var/www/yii_framework/framework/web/CController.php(782): RecipeController->renderPartial()
+#7 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(247): RecipeController->render()
+#8 /var/www/yii_framework/framework/web/actions/CInlineAction.php(49): RecipeController->actionCreate()
+#9 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#10 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): RecipeController->runAction()
+#11 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /var/www/yii_framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#13 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): RecipeController->filterAccessControl()
+#14 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#15 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#16 /var/www/yii_framework/framework/web/CController.php(265): RecipeController->runActionWithFilters()
+#17 /var/www/yii_framework/framework/web/CWebApplication.php(282): RecipeController->run()
+#18 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#19 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /var/www/html/thoushallcook/index.php(13): CWebApplication->run()
+REQUEST_URI=/thoushallcook/index.php?r=recipe/create
+in /var/www/html/thoushallcook/protected/views/recipe/_form.php (49)
+in /var/www/html/thoushallcook/protected/views/recipe/create.php (18)
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (247)
+2016/05/09 06:30:11 [error] [exception.CException] exception 'CException' with message 'Alias "zii.widgets.grid" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/www/yii_framework/framework/YiiBase.php:323
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(146): YiiBase::import('zii.widgets.gri...', true)
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(27): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/09 06:32:33 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:18 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:19 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:19 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:20 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:20 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:20 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:20 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:21 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:21 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 06:33:21 [error] [exception.CException] exception 'CException' with message 'Property "CGridView.data" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CWidgetFactory.php(161): CComponent->__set('data', Object(Ingredient))
+#1 /var/www/yii_framework/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RecipeController), 'zii.widgets.gri...', Array)
+#2 /var/www/yii_framework/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.gri...', Array)
+#3 /var/www/html/thoushallcook/protected/views/recipe/view.php(38): CBaseController->widget('zii.widgets.gri...', Array)
+#4 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#5 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#6 /var/www/yii_framework/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#7 /var/www/yii_framework/framework/web/CController.php(782): CController->renderPartial('view', Array, true)
+#8 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): CController->render('view', Array)
+#9 [internal function]: RecipeController->actionView('63')
+#10 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(RecipeController), Array)
+#11 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(RecipeController), Object(ReflectionMethod), Array)
+#12 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('view')
+#21 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/view')
+#22 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#23 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
+---
+2016/05/09 22:27:06 [error] [exception.CException] exception 'CException' with message 'Property "RecipeController.delete" is not defined.' in /var/www/yii_framework/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/thoushallcook/protected/views/layouts/column2.php(19): CComponent->__get('delete')
+#1 /var/www/yii_framework/framework/web/CBaseController.php(126): require('/var/www/html/t...')
+#2 /var/www/yii_framework/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/t...', Array, true)
+#3 /var/www/yii_framework/framework/web/CController.php(784): CBaseController->renderFile('/var/www/html/t...', Array, true)
+#4 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(316): CController->render('index', Array)
+#5 /var/www/yii_framework/framework/web/actions/CInlineAction.php(49): RecipeController->actionIndex()
+#6 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /var/www/yii_framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#13 /var/www/yii_framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/www/yii_framework/framework/web/CWebApplication.php(282): CController->run('index')
+#15 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController('recipe/index')
+#16 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#17 /var/www/html/thoushallcook/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/thoushallcook/index.php?r=recipe/index
+HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/create
+---
+2016/05/09 22:35:15 [error] [php] Undefined variable: ingredient (/var/www/html/thoushallcook/protected/views/recipe/_form.php:30)
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CController.php(869): RecipeController->renderFile()
+#1 /var/www/html/thoushallcook/protected/views/recipe/update.php(21): RecipeController->renderPartial()
+#2 /var/www/yii_framework/framework/web/CBaseController.php(126): require()
+#3 /var/www/yii_framework/framework/web/CBaseController.php(95): RecipeController->renderInternal()
+#4 /var/www/yii_framework/framework/web/CController.php(869): RecipeController->renderFile()
+#5 /var/www/yii_framework/framework/web/CController.php(782): RecipeController->renderPartial()
+#6 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(291): RecipeController->render()
+#7 unknown(0): RecipeController->actionUpdate()
+#8 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#9 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#10 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#11 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): RecipeController->runAction()
+#12 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#13 /var/www/yii_framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#14 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): RecipeController->filterAccessControl()
+#15 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#16 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#17 /var/www/yii_framework/framework/web/CController.php(265): RecipeController->runActionWithFilters()
+#18 /var/www/yii_framework/framework/web/CWebApplication.php(282): RecipeController->run()
+#19 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#21 /var/www/html/thoushallcook/index.php(13): CWebApplication->run()
+REQUEST_URI=/thoushallcook/index.php?r=recipe/update&id=63
+in /var/www/html/thoushallcook/protected/views/recipe/_form.php (30)
+in /var/www/html/thoushallcook/protected/views/recipe/update.php (21)
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (291)
+2016/05/09 22:36:51 [error] [php] explode() expects at least 2 parameters, 1 given (/var/www/html/thoushallcook/protected/views/recipe/view.php:39)
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CBaseController.php(95): RecipeController->renderInternal()
+#1 /var/www/yii_framework/framework/web/CController.php(869): RecipeController->renderFile()
+#2 /var/www/yii_framework/framework/web/CController.php(782): RecipeController->renderPartial()
+#3 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(59): RecipeController->render()
+#4 unknown(0): RecipeController->actionView()
+#5 /var/www/yii_framework/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#6 /var/www/yii_framework/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): RecipeController->runAction()
+#9 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /var/www/yii_framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#11 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): RecipeController->filterAccessControl()
+#12 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#13 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#14 /var/www/yii_framework/framework/web/CController.php(265): RecipeController->runActionWithFilters()
+#15 /var/www/yii_framework/framework/web/CWebApplication.php(282): RecipeController->run()
+#16 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/thoushallcook/index.php(13): CWebApplication->run()
+REQUEST_URI=/thoushallcook/index.php?r=recipe/view&id=63
+in /var/www/html/thoushallcook/protected/views/recipe/view.php (39)
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (59)
+in /var/www/html/thoushallcook/index.php (13)

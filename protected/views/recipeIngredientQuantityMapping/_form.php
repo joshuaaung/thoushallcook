@@ -37,6 +37,12 @@
 		<?php echo $form->error($model,'quantity_id'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'measurement_id'); ?>
+		<?php echo $form->textField($model,'measurement_id'); ?>
+		<?php echo $form->error($model,'measurement_id'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

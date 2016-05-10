@@ -59,12 +59,17 @@ class RecipeController extends Controller
 		));
 	}
 
-	public function extractData($mappings){
-		$results = array();
+	public function extractData($mappings)
+	{	
+		$results = array('ingredient'=>[], 'quantity'=>[], 'measurement'=>[]);
 		foreach ($mappings as $item) {
 			$ingredient = Ingredient::model()->findByPk($item->ingredient_id);
 			$quantity = Quantity::model()->findByPk($item->quantity_id);
-			array_push($results, $ingredient, $quantity);
+			$measurement = Measurement::model()->findByPk($item->measurement_id);
+			array_push($results['ingredient'], $ingredient);
+			array_push($results['quantity'], $quantity);
+			array_push($results['measurement'], $measurement);
+			//array_push($results, $ingredient, $quantity, $measurement);
 		}
 		return $results;
 	}
@@ -79,14 +84,15 @@ class RecipeController extends Controller
 		$model=new Recipe;
 		$ingredientModels = [];
 		$quantityModels = [];
-		$quantity=new Quantity;
-		$mapping=new RecipeIngredientQuantityMapping;
+		$measurementModels = [];
 		
 		$ingredients = Ingredient::model()->findAll(); //get all the existing ingredients
 		$quantities = Quantity::model()->findAll(); //get all the existing quantities
+		$measurements = Measurement::model()->findAll();
 
 		$found_ingredient = false;
 		$found_quantity = false;
+		$found_measurement = false;
 		
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
@@ -134,16 +140,52 @@ class RecipeController extends Controller
 					}
 				} 
 
-				if(!$this->hasDuplicate($quantityModels, $quantity)) {
+				//if(!$this->hasDuplicate($quantityModels, $quantity)) {
 					$quantityModels[] = $quantity;
 					
 					if(!$found_quantity) {
 						$quantity->save(); //new ingredient! save it
 					}
-				}
+				//}
 				$found_quantity = false;
 			}
 		}
+
+
+		/*Multiple measurement input*/
+		if(isset($_POST['Measurement'])){
+			foreach($_POST['Measurement'] as $measurementModel) {
+				$measurement = new Measurement;
+				$measurement->attributes = $measurementModel;
+
+				foreach($measurements as $item) {
+					if(strcasecmp($item->name, $measurement->name) == 0) {
+						$found_measurement = true;
+						$measurement = $item; //there is old record. Assign it to the $ingredient
+						break;
+					}
+				}
+
+				//if(!$this->hasDuplicate($measurementModels , $measurement)) {
+					$measurementModels[] = $measurement;
+
+					if(!$found_measurement) {
+						$measurement->save(); //new ingredient! save it
+					} 
+				//}
+
+				$found_measurement = false;
+			}
+		}
+
+		/*Validation whehter the Recipe/Ingredient/Quantity field have been filled*/
+		/*Must have at least 1 ingrediet per recipe*/	
+		/*
+		$valid=$addressModel_1->validate(); 
+        $valid=$addressModel_2->validate() && $valid;
+        $valid=$model->validate() && $valid;
+		*/
+
 
         /*Single Ingredient input*/
         /*
@@ -188,10 +230,10 @@ class RecipeController extends Controller
 		if(isset($_POST['Recipe']))
 		{
 			$model->attributes=$_POST['Recipe'];
-			if($model->save()){
+			if($model->save()) {
 				for ($i = 0; $i < count($ingredientModels); $i++){
-					if($ingredientModels[$i] != null && $quantityModels[$i] != null)
-						$this->createMapping($model->id, $ingredientModels[$i]->id, $quantityModels[$i]->id);
+					if($ingredientModels[$i] != null && $quantityModels[$i] != null && $measurementModels[$i] != null)
+						$this->createMapping($model->id, $ingredientModels[$i]->id, $quantityModels[$i]->id, $measurementModels[$i]->id);
 				}
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -201,14 +243,16 @@ class RecipeController extends Controller
 			'model'=>$model,
 			'ingredient'=>new Ingredient,
 			'quantity'=>new Quantity,
+			'measurement'=>new Measurement,
 		));
 	}
 
-	public function createMapping($recipe_id, $ingredient_id, $quantity_id) {
+	public function createMapping($recipe_id, $ingredient_id, $quantity_id, $measurement_id) {
 		$mapping = new RecipeIngredientQuantityMapping;
 		$mapping->recipe_id = $recipe_id;
 		$mapping->ingredient_id = $ingredient_id;
 		$mapping->quantity_id = $quantity_id;
+		$mapping->measurement_id = $measurement_id;
 
 		$mapping->save();
 	}

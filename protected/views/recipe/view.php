@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'Create Recipe', 'url'=>array('create')),
 	array('label'=>'Update Recipe', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Recipe', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Recipe', 'url'=>array('admin')),
+	//array('label'=>'Manage Recipe', 'url'=>array('admin')),
 );
 ?>
 
@@ -26,31 +26,35 @@ $this->widget('zii.widgets.CDetailView', array(
 	),
 )); 
 
-$counter = 1;
-$ingredient_counter = 1;
-foreach ($results as $result){
-	if(($counter%2) != 0){
-		$this->widget('zii.widgets.CDetailView', array(
-			'data'=>$result,
-			'attributes'=>array(
-				array(
-			      'label' => 'Ingredient '.$ingredient_counter,
-			      'value' => $result->name,
-			    )
-			),
-		));
-		$ingredient_counter++;
-	} else {
-		$this->widget('zii.widgets.CDetailView', array(
-			'data'=>$result,
-			'attributes'=>array(
-				array(
-			      'label' => 'Quantity',
-			      'value' => $result->name,
-			    )
-			),
-		));
-	}
-	$counter++;
+for($i = 0; $i < count($results['ingredient']); $i++){
+	$this->widget('zii.widgets.CDetailView', array(
+		'data'=>$results['ingredient'][$i],
+		'attributes'=>array(
+			array(
+		      'label' => 'Ingredient '.($i+1),
+		      'value' => $results['ingredient'][$i]->name,
+		    )
+		),
+	));
+
+	$this->widget('zii.widgets.CDetailView', array(
+		'data'=>$results['quantity'][$i],
+		'attributes'=>array(
+			array(
+		      'label' => 'Quantity',
+		      'value' => $results['quantity'][$i]->name,
+		    )
+		),
+	));
+
+	$this->widget('zii.widgets.CDetailView', array(
+		'data'=>$results['measurement'][$i],
+		'attributes'=>array(
+			array(
+		      'label' => 'Measurement',
+		      'value' => $results['measurement'][$i]->name,
+		    )
+		),
+	));
 }
 ?>

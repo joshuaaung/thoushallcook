@@ -1,18 +1,18 @@
 <?php
-/* @var $this RecipeController */
+/* @var $this MeasurementController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Recipes',
+	'Measurements',
 );
 
 $this->menu=array(
-	array('label'=>'Create Recipe', 'url'=>array('create')),
-	//array('label'=>'Manage Recipe', 'url'=>array('admin')),
+	array('label'=>'Create Measurement', 'url'=>array('create')),
+	array('label'=>'Manage Measurement', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Recipes</h1>
+<h1>Measurements</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
