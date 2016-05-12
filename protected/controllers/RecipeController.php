@@ -141,11 +141,13 @@ class RecipeController extends Controller
 				} 
 
 				//if(!$this->hasDuplicate($quantityModels, $quantity)) {
-					$quantityModels[] = $quantity;
 					
-					if(!$found_quantity) {
-						$quantity->save(); //new ingredient! save it
-					}
+				if(!$found_quantity && !($this->hasDuplicate($quantityModels, $quantity))) {
+					$quantity->save(); //new ingredient! save it
+				}
+
+				$quantityModels[] = $quantity;
+
 				//}
 				$found_quantity = false;
 			}
@@ -167,11 +169,12 @@ class RecipeController extends Controller
 				}
 
 				//if(!$this->hasDuplicate($measurementModels , $measurement)) {
-					$measurementModels[] = $measurement;
 
-					if(!$found_measurement) {
-						$measurement->save(); //new ingredient! save it
-					} 
+				if(!$found_measurement && !($this->hasDuplicate($measurementModels, $measurement))) {
+					$measurement->save(); 
+				} 
+				$measurementModels[] = $measurement;
+
 				//}
 
 				$found_measurement = false;
@@ -207,6 +210,7 @@ class RecipeController extends Controller
 			} 
 		}
 		*/
+		
 		/*Single Quantity input*/
 		/*
 		if(isset($_POST['Quantity']))
@@ -276,8 +280,40 @@ class RecipeController extends Controller
 	{
 		$model=$this->loadModel($id);
 
+		$mapping=RecipeIngredientQuantityMapping::model()->findAll(array("condition"=>"recipe_id=$id","order"=>"id"));
+		$results = $this->extractData($mapping);
+
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+		$ingredientModels = [];
+		$ingredients = Ingredient::model()->findAll(); //get all the existing ingredients
+		$found_ingredient = false;
+		
+		/*Multiple Ingredient inputs*/
+		if(isset($_POST['Ingredient'])){
+			foreach($_POST['Ingredient'] as $ingredientModel) {
+				$ingredient = new Ingredient;
+				$ingredient->attributes = $ingredientModel;
+
+				foreach($ingredients as $item) {
+					if(strcasecmp($item->name, $ingredient->name) == 0) {
+						$found_ingredient = true;
+						$ingredient = $item; //there is old record. Assign it to the $ingredient
+						break;
+					}
+				}
+
+				if(!$this->hasDuplicate($ingredientModels, $ingredient)) {
+					$ingredientModels[] = $ingredient;
+
+					if(!$found_ingredient) {
+						$ingredient->save(); //new ingredient! save it
+					} 
+				}
+
+				$found_ingredient = false;
+			}
+		}
 
 		if(isset($_POST['Recipe']))
 		{
@@ -288,6 +324,9 @@ class RecipeController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'ingredient'=>$results['ingredient'],
+			'quantity'=>$results['quantity'],
+			'measurement'=>$results['measurement']
 		));
 	}
 

@@ -17,23 +17,22 @@ $this->menu=array(
 ?>
 
 <h1>View Recipe <b><?php echo $model->name; ?></b></h1>
-
 <?php 
 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'name',
 	),
-)); 
+));
 
-for($i = 0; $i < count($results['ingredient']); $i++){
+for($i=0; $i<count($results['ingredient']); $i++) {
 	$this->widget('zii.widgets.CDetailView', array(
 		'data'=>$results['ingredient'][$i],
 		'attributes'=>array(
 			array(
-		      'label' => 'Ingredient '.($i+1),
-		      'value' => $results['ingredient'][$i]->name,
-		    )
+				'label'=>'Ingredient '.($i+1),
+				'value'=>$results['ingredient'][$i]->name,
+			),
 		),
 	));
 
@@ -41,20 +40,42 @@ for($i = 0; $i < count($results['ingredient']); $i++){
 		'data'=>$results['quantity'][$i],
 		'attributes'=>array(
 			array(
-		      'label' => 'Quantity',
-		      'value' => $results['quantity'][$i]->name,
-		    )
-		),
-	));
-
-	$this->widget('zii.widgets.CDetailView', array(
-		'data'=>$results['measurement'][$i],
-		'attributes'=>array(
+				'label'=>'Quantity',
+				'value'=>$results['quantity'][$i]->name,
+			),
 			array(
-		      'label' => 'Measurement',
-		      'value' => $results['measurement'][$i]->name,
-		    )
+				'label'=>'Measurement',
+				'value'=>$results['measurement'][$i]->name,
+			)
 		),
 	));
 }
+
+/*
+for($i=0; $i<count($results['ingredient']); $i++) {
+	$this->widget('zii.widgets.grid.CGridView', array(
+		'dataProvider'=>$results['ingredient'][$i]->search(),
+		'columns'=>array(
+			'name',
+			array(
+				'class'=>'CDataColumn',
+	            'name'=>'Quantity',
+	            'value'=>$results['quantity'][$i]->name,
+		    ),
+		),
+		'htmlOptions' => array('style' => 'width: 50px; display:inline')
+	)); 
+*/
+	/*
+	$this->widget('zii.widgets.grid.CGridView', array(
+		'id'=>'recipe-grid',
+		'dataProvider'=>$results['quantity'][0]->search(),
+		'filter'=>$results['quantity'][0],
+		'columns'=>array(
+			'name',
+		),
+		'htmlOptions' => array('style' => 'width: 30px;'),
+	));
+	*/
+
 ?>
