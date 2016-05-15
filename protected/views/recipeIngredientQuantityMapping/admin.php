@@ -48,7 +48,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id',
 		'recipe_id',
 		'ingredient_id',
-		'quantity_id',
+		'quantity',
 		'measurement_id',
 		array(
 			'class'=>'CButtonColumn',

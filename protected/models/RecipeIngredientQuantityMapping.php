@@ -7,7 +7,7 @@
  * @property integer $id
  * @property integer $recipe_id
  * @property integer $ingredient_id
- * @property integer $quantity_id
+ * @property integer $quantity
  * @property integer $measurement_id
  */
 class RecipeIngredientQuantityMapping extends CActiveRecord
@@ -28,11 +28,11 @@ class RecipeIngredientQuantityMapping extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('recipe_id, ingredient_id, measurement_id', 'required'),
-			array('recipe_id, ingredient_id, quantity_id, measurement_id', 'numerical', 'integerOnly'=>true),
+			array('recipe_id, ingredient_id, quantity, measurement_id', 'required'),
+			array('recipe_id, ingredient_id, quantity, measurement_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, recipe_id, ingredient_id, quantity_id, measurement_id', 'safe', 'on'=>'search'),
+			array('id, recipe_id, ingredient_id, quantity, measurement_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,7 +56,7 @@ class RecipeIngredientQuantityMapping extends CActiveRecord
 			'id' => 'ID',
 			'recipe_id' => 'Recipe',
 			'ingredient_id' => 'Ingredient',
-			'quantity_id' => 'Quantity',
+			'quantity' => 'Quantity',
 			'measurement_id' => 'Measurement',
 		);
 	}
@@ -82,7 +82,7 @@ class RecipeIngredientQuantityMapping extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('recipe_id',$this->recipe_id);
 		$criteria->compare('ingredient_id',$this->ingredient_id);
-		$criteria->compare('quantity_id',$this->quantity_id);
+		$criteria->compare('quantity',$this->quantity);
 		$criteria->compare('measurement_id',$this->measurement_id);
 
 		return new CActiveDataProvider($this, array(

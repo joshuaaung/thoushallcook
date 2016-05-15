@@ -64,7 +64,7 @@ class RecipeController extends Controller
 		$results = array('ingredient'=>[], 'quantity'=>[], 'measurement'=>[]);
 		foreach ($mappings as $item) {
 			$ingredient = Ingredient::model()->findByPk($item->ingredient_id);
-			$quantity = Quantity::model()->findByPk($item->quantity_id);
+			$quantity = $item->quantity;
 			$measurement = Measurement::model()->findByPk($item->measurement_id);
 			array_push($results['ingredient'], $ingredient);
 			array_push($results['quantity'], $quantity);
@@ -83,15 +83,16 @@ class RecipeController extends Controller
 
 		$model=new Recipe;
 		$ingredientModels = [];
-		$quantityModels = [];
+		//(1) $quantityModels = [];
 		$measurementModels = [];
+		$quantities = [];
 		
 		$ingredients = Ingredient::model()->findAll(); //get all the existing ingredients
-		$quantities = Quantity::model()->findAll(); //get all the existing quantities
+		//(2) $quantities = Quantity::model()->findAll(); //get all the existing quantities
 		$measurements = Measurement::model()->findAll();
 
 		$found_ingredient = false;
-		$found_quantity = false;
+		//(3) $found_quantity = false;
 		$found_measurement = false;
 		
 		// Uncomment the following line if AJAX validation is needed
@@ -126,7 +127,15 @@ class RecipeController extends Controller
 			}
 		}
 
+		if(isset($_POST['RecipeIngredientQuantityMapping'])){
+			foreach($_POST['RecipeIngredientQuantityMapping'] as $mappingModel) {
+				$quantity = new RecipeIngredientQuantityMapping;
+				$quantity->attributes = $mappingModel;
+				array_push($quantities, $quantity->quantity);
+			}
+		}
 		/*Multiple Quantity inputs*/
+		/*
 		if(isset($_POST['Quantity'])){
 			foreach($_POST['Quantity'] as $quantityModel) {
 				$quantity = new Quantity;
@@ -152,7 +161,7 @@ class RecipeController extends Controller
 				$found_quantity = false;
 			}
 		}
-
+		*/
 
 		/*Multiple measurement input*/
 		if(isset($_POST['Measurement'])){
@@ -236,8 +245,8 @@ class RecipeController extends Controller
 			$model->attributes=$_POST['Recipe'];
 			if($model->save()) {
 				for ($i = 0; $i < count($ingredientModels); $i++){
-					if($ingredientModels[$i] != null && $quantityModels[$i] != null && $measurementModels[$i] != null)
-						$this->createMapping($model->id, $ingredientModels[$i]->id, $quantityModels[$i]->id, $measurementModels[$i]->id);
+					if($ingredientModels[$i] != null && $quantities[$i] != null && $measurementModels[$i] != null)
+						$this->createMapping($model->id, $ingredientModels[$i]->id, $quantities[$i], $measurementModels[$i]->id);
 				}
 				$this->redirect(array('view','id'=>$model->id));
 			}
@@ -246,16 +255,16 @@ class RecipeController extends Controller
 		$this->render('create',array(
 			'model'=>$model,
 			'ingredient'=>new Ingredient,
-			'quantity'=>new Quantity,
+			'mapping_quantity'=>new RecipeIngredientQuantityMapping,
 			'measurement'=>new Measurement,
 		));
 	}
 
-	public function createMapping($recipe_id, $ingredient_id, $quantity_id, $measurement_id) {
+	public function createMapping($recipe_id, $ingredient_id, $quantity, $measurement_id) {
 		$mapping = new RecipeIngredientQuantityMapping;
 		$mapping->recipe_id = $recipe_id;
 		$mapping->ingredient_id = $ingredient_id;
-		$mapping->quantity_id = $quantity_id;
+		$mapping->quantity = $quantity;
 		$mapping->measurement_id = $measurement_id;
 
 		$mapping->save();

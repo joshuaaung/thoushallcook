@@ -27,8 +27,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'quantity_id'); ?>
-		<?php echo $form->textField($model,'quantity_id'); ?>
+		<?php echo $form->label($model,'quantity'); ?>
+		<?php echo $form->textField($model,'quantity'); ?>
 	</div>
 
 	<div class="row">

@@ -24,7 +24,7 @@ $this->menu=array(
 		'id',
 		'recipe_id',
 		'ingredient_id',
-		'quantity_id',
+		'quantity',
 		'measurement_id',
 	),
 )); ?>

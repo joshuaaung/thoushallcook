@@ -41,7 +41,7 @@ for($i=0; $i<count($results['ingredient']); $i++) {
 		'attributes'=>array(
 			array(
 				'label'=>'Quantity',
-				'value'=>$results['quantity'][$i]->name,
+				'value'=>$results['quantity'][$i],
 			),
 			array(
 				'label'=>'Measurement',

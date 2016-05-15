@@ -15,4 +15,4 @@ $this->menu=array(
 
 <h1>Create Recipe</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model, 'ingredient'=>$ingredient, 'quantity'=>$quantity, 'measurement'=>$measurement)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model, 'ingredient'=>$ingredient, 'mapping_quantity'=>$mapping_quantity, 'measurement'=>$measurement)); ?>

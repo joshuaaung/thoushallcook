@@ -32,9 +32,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'quantity_id'); ?>
-		<?php echo $form->textField($model,'quantity_id'); ?>
-		<?php echo $form->error($model,'quantity_id'); ?>
+		<?php echo $form->labelEx($model,'quantity'); ?>
+		<?php echo $form->textField($model,'quantity'); ?>
+		<?php echo $form->error($model,'quantity'); ?>
 	</div>
 
 	<div class="row">

@@ -17,8 +17,8 @@
 	<?php echo CHtml::encode($data->ingredient_id); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('quantity_id')); ?>:</b>
-	<?php echo CHtml::encode($data->quantity_id); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('quantity')); ?>:</b>
+	<?php echo CHtml::encode($data->quantity); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('measurement_id')); ?>:</b>
