@@ -33,9 +33,9 @@
 	    </div>
 
 	    <div class="row">
-	        <?php echo $form->labelEx($quantity[$i],'['.$i.']'.'Quantity'); ?>
-	        <?php echo $form->textField($quantity[$i],'['.$i.']'.'name', array('size'=>20, 'maxlength'=>20)); ?>
-	        <?php echo $form->error($quantity[$i],'['.$i.']'.'name'); ?>
+	        <?php echo $form->labelEx($mapping[$i],'['.$i.']'.'Quantity'); ?>
+	        <?php echo $form->textField($mapping[$i],'['.$i.']'.'quantity', array('size'=>10, 'maxlength'=>10)); ?>
+	        <?php echo $form->error($mapping[$i],'['.$i.']'.'quantity'); ?>
 	    </div>
 
 	    <div class="row">

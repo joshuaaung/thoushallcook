@@ -8,11 +8,8 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Thou Shall Cook',
+	'theme'=>'bootstrap',
 
-	//path aliases
-	'aliases' => array(
-		'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'),
-	),	
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -20,7 +17,6 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'bootstrap.helpers.TbHtml',
 	),
 
 	'modules'=>array(
@@ -31,7 +27,6 @@ return array(
 			'password'=>'1234',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>false,//array('128.199.144.161','::1'),
-			'generatorPaths' => array('bootstrap.gii'),
 		),
 		
 	),
@@ -42,9 +37,6 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
-		),
-		'bootstrap' => array(
-			'class' => 'bootstrap.components.TbApi',
 		),
 
 		// uncomment the following to enable URLs in path-format

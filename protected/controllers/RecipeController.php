@@ -74,6 +74,20 @@ class RecipeController extends Controller
 		return $results;
 	}
 
+	public function extractDataModel($mappings)
+	{	
+		$results = array('ingredient'=>[], 'mapping'=>[], 'measurement'=>[]);
+		foreach ($mappings as $item) {
+			$ingredient = Ingredient::model()->findByPk($item->ingredient_id);
+			$measurement = Measurement::model()->findByPk($item->measurement_id);
+			array_push($results['ingredient'], $ingredient);
+			array_push($results['mapping'], $item);
+			array_push($results['measurement'], $measurement);
+			//array_push($results, $ingredient, $quantity, $measurement);
+		}
+		return $results;
+	}
+
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -289,8 +303,8 @@ class RecipeController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		$mapping=RecipeIngredientQuantityMapping::model()->findAll(array("condition"=>"recipe_id=$id","order"=>"id"));
-		$results = $this->extractData($mapping);
+		$mapping = RecipeIngredientQuantityMapping::model()->findAll(array("condition"=>"recipe_id=$id","order"=>"id"));
+		$results = $this->extractDataModel($mapping);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -299,7 +313,8 @@ class RecipeController extends Controller
 		$found_ingredient = false;
 		
 		/*Multiple Ingredient inputs*/
-		if(isset($_POST['Ingredient'])){
+		/*
+		if(isset($_POST['Ingredient'])) {
 			foreach($_POST['Ingredient'] as $ingredientModel) {
 				$ingredient = new Ingredient;
 				$ingredient->attributes = $ingredientModel;
@@ -330,11 +345,11 @@ class RecipeController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-
+		*/
 		$this->render('update',array(
 			'model'=>$model,
 			'ingredient'=>$results['ingredient'],
-			'quantity'=>$results['quantity'],
+			'mapping'=>$results['mapping'],
 			'measurement'=>$results['measurement']
 		));
 	}

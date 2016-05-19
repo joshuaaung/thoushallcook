@@ -12,9 +12,10 @@ $this->menu=array(
 );
 ?>
 
-<h1>Recipes</h1>
+<h2><b>Recipes</b></h2>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
+	'htmlOptions' => array('class'=>'list-group')
 )); ?>
