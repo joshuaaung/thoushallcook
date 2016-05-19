@@ -79,3 +79,7 @@ for($i=0; $i<count($results['ingredient']); $i++) {
 	*/
 
 ?>
+
+<script>
+
+</script>

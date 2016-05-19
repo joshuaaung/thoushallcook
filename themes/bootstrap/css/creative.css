@@ -54,8 +54,50 @@ p {
     line-height: 1.5;
 }
 
+label {
+	display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+    margin-right: 10px;
+}
+
 input {
 	color: #3CB371;
+	width: 200px;
+	background-color: #F5F5F5;
+	border: none;
+}
+
+div.errorSummary ul {
+	display: none;
+}
+
+div.errorSummary p {
+	color: #CD5C5C;
+}
+
+div.errorMessage {
+	color: #CD5C5C;
+	font-style: italic;
+	font-size: 10px;
+	margin-left: 260px;
+	margin-bottom: 20px;
+	margin-top: 5px;
+}
+
+table.detail-view {
+	color: #000;
+	font-style: italic;
+}
+
+td {
+	background-color: #fff;
+}
+
+th {
+	background-color: #fff;
 }
 
 .bg-primary {
