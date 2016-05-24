@@ -195,7 +195,8 @@ class RecipeController extends Controller
 
 				if(!$found_measurement && !($this->hasDuplicate($measurementModels, $measurement))) {
 					$measurement->save(); 
-				} 
+				}
+				
 				$measurementModels[] = $measurement;
 
 				//}

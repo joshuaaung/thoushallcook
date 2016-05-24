@@ -6,7 +6,9 @@ $this->breadcrumbs=array(
 	'Recipes'=>array('index'),
 	$model->name,
 );
+?>
 
+<?php
 $this->menu=array(
 	array('label'=>'List Recipe', 'url'=>array('index')),
 	array('label'=>'Create Recipe', 'url'=>array('create')),
@@ -16,7 +18,21 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Recipe <b><?php echo $model->name; ?></b></h1>
+<div class="label" >
+	<h1><b><?php echo $model->name; ?></b></h1>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-6 text-center">
+			<a id='ingredient' class="btn btn-primary btn-sm active"><i class="fa fa-2x fa-pencil-square-o wow bounceIn text-primary" style="color:#fff" data-wow-delay=".3s"></i><h4>Ingredients</h4></a>
+		</div>
+		<div class="col-md-6 col-md-6 text-center">
+			<a id='about' class="btn btn-primary btn-sm active"><i class="fa fa-2x fa-info wow bounceIn text-primary" style="color:#fff" data-wow-delay=".3s"></i><h4>About</h4></a>
+		</div>
+	</div>
+</div>
+
+<div id='ingredientTable' class="ingredientTable" style="display:none">
 <?php 
 $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -51,35 +67,19 @@ for($i=0; $i<count($results['ingredient']); $i++) {
 	));
 }
 
-/*
-for($i=0; $i<count($results['ingredient']); $i++) {
-	$this->widget('zii.widgets.grid.CGridView', array(
-		'dataProvider'=>$results['ingredient'][$i]->search(),
-		'columns'=>array(
-			'name',
-			array(
-				'class'=>'CDataColumn',
-	            'name'=>'Quantity',
-	            'value'=>$results['quantity'][$i]->name,
-		    ),
-		),
-		'htmlOptions' => array('style' => 'width: 50px; display:inline')
-	)); 
-*/
-	/*
-	$this->widget('zii.widgets.grid.CGridView', array(
-		'id'=>'recipe-grid',
-		'dataProvider'=>$results['quantity'][0]->search(),
-		'filter'=>$results['quantity'][0],
-		'columns'=>array(
-			'name',
-		),
-		'htmlOptions' => array('style' => 'width: 30px;'),
-	));
-	*/
-
 ?>
+</div>
+	
+<div id='aboutPage' style="display:none">
+	<h1>About each recipe, load up from the database...</h1>
+</div>
 
 <script>
+$('#ingredient').on('click', function() {
+	$('#ingredientTable').slideToggle(300);
+});
 
+$('#about').on('click', function() {
+	$('#aboutPage').slideToggle(300);
+});
 </script>

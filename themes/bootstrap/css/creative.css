@@ -531,6 +531,10 @@ img::-moz-selection {
     transition: all 2s;
 }
 
+#ingredient {
+    margin-bottom: 10px;
+}
+
 body {
     webkit-tap-highlight-color: #222;
 }

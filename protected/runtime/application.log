@@ -6316,3 +6316,25 @@ Stack trace:
 REQUEST_URI=/thoushallcook/index.php?r=site/index
 HTTP_REFERER=http://128.199.144.161/thoushallcook/index.php?r=recipe/index
 ---
+2016/05/24 00:13:52 [error] [php] Object of class Recipe could not be converted to string (/var/www/html/thoushallcook/protected/views/recipe/index.php:19)
+Stack trace:
+#0 /var/www/yii_framework/framework/web/CController.php(869): RecipeController->renderFile()
+#1 /var/www/yii_framework/framework/web/CController.php(782): RecipeController->renderPartial()
+#2 /var/www/html/thoushallcook/protected/controllers/RecipeController.php(379): RecipeController->render()
+#3 /var/www/yii_framework/framework/web/actions/CInlineAction.php(49): RecipeController->actionIndex()
+#4 /var/www/yii_framework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/yii_framework/framework/web/filters/CFilterChain.php(133): RecipeController->runAction()
+#6 /var/www/yii_framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/yii_framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /var/www/yii_framework/framework/web/filters/CInlineFilter.php(58): RecipeController->filterAccessControl()
+#9 /var/www/yii_framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /var/www/yii_framework/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/yii_framework/framework/web/CController.php(265): RecipeController->runActionWithFilters()
+#12 /var/www/yii_framework/framework/web/CWebApplication.php(282): RecipeController->run()
+#13 /var/www/yii_framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /var/www/yii_framework/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/thoushallcook/index.php(13): CWebApplication->run()
+REQUEST_URI=/thoushallcook/index.php?r=recipe/index
+in /var/www/html/thoushallcook/protected/views/recipe/index.php (19)
+in /var/www/html/thoushallcook/protected/controllers/RecipeController.php (379)
+in /var/www/html/thoushallcook/index.php (13)
