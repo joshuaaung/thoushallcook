@@ -5,6 +5,8 @@
 		<?php echo $content; ?>
 	</div><!-- content -->
 </div>
+
+<!--span-5 last-->
 <div class="span-5 last">
 	<div id="sidebar">
 	<?php
@@ -13,10 +15,11 @@
 		));
 		$this->widget('zii.widgets.CMenu', array(
 			'items'=>$this->menu,
-			'htmlOptions'=>array('class'=>'operations'),
+			'htmlOptions'=>array('class'=>'operation'),
 		));
 		$this->endWidget();
 	?>
-	</div><!-- sidebar -->
+	</div>
 </div>
+
 <?php $this->endContent(); ?>

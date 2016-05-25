@@ -196,7 +196,7 @@ class RecipeController extends Controller
 				if(!$found_measurement && !($this->hasDuplicate($measurementModels, $measurement))) {
 					$measurement->save(); 
 				}
-				
+
 				$measurementModels[] = $measurement;
 
 				//}
@@ -300,7 +300,7 @@ class RecipeController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate($id) 
 	{
 		$model=$this->loadModel($id);
 
@@ -309,34 +309,45 @@ class RecipeController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		$ingredientModels = [];
-		$ingredients = Ingredient::model()->findAll(); //get all the existing ingredients
-		$found_ingredient = false;
-		
+
 		/*Multiple Ingredient inputs*/
-		/*
 		if(isset($_POST['Ingredient'])) {
+			$i = 0;
 			foreach($_POST['Ingredient'] as $ingredientModel) {
 				$ingredient = new Ingredient;
 				$ingredient->attributes = $ingredientModel;
 
-				foreach($ingredients as $item) {
-					if(strcasecmp($item->name, $ingredient->name) == 0) {
-						$found_ingredient = true;
-						$ingredient = $item; //there is old record. Assign it to the $ingredient
-						break;
-					}
-				}
+				if(!Ingredient::model()->findByAttributes(array('name'=>$ingredient->name))) {
+					//save the new item
+					//DO NOT delete the old item
+					//Change the relation in the mapping -> new ingredient ties to this recipe;
+					$ingredient->save();
+					$mapping[$i]->ingredient_id = $ingredient->id;
+				} 
+				
+				$quantity = new RecipeIngredientQuantityMapping;
+				$quantity->attributes = $_POST['RecipeIngredientQuantityMapping'][$i];
+				$mapping[$i]->quantity = $quantity->quantity;
+				
+				$mapping[$i]->save();
+				
+				$i++;
+			}
+		}
 
-				if(!$this->hasDuplicate($ingredientModels, $ingredient)) {
-					$ingredientModels[] = $ingredient;
+		if(isset($_POST['Measurement'])) {
+			$i = 0;
+			foreach($_POST['Measurement'] as $measurementModel) {
+				$measurement = new Measurement;
+				$measurement->attributes = $measurementModel;
 
-					if(!$found_ingredient) {
-						$ingredient->save(); //new ingredient! save it
-					} 
-				}
+				if(!Measurement::model()->findByAttributes(array('name'=>$measurement->name))) {
+					$measurement->save();
+					$mapping[$i]->measurement_id = $measurement->id;
+				} 
 
-				$found_ingredient = false;
+				$mapping[$i]->save();
+				$i++;
 			}
 		}
 
@@ -346,7 +357,8 @@ class RecipeController extends Controller
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
-		*/
+
+
 		$this->render('update',array(
 			'model'=>$model,
 			'ingredient'=>$results['ingredient'],

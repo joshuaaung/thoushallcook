@@ -74,6 +74,8 @@ for($i=0; $i<count($results['ingredient']); $i++) {
 	<h1>About each recipe, load up from the database...</h1>
 </div>
 
+
+
 <script>
 $('#ingredient').on('click', function() {
 	$('#ingredientTable').slideToggle(300);

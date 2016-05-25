@@ -38,7 +38,7 @@
 				),
 			)); ?>
 		</div><!-- mainmenu -->
-		
+
 		<?php if(isset($this->breadcrumbs)):?>
 			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 				'links'=>$this->breadcrumbs,
@@ -47,13 +47,11 @@
 
 		<?php echo $content; ?>
 
-		<div class="clear"></div>
-
 		<div id="footer">
 			Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
 			All Rights Reserved.<br/>
 			<?php echo Yii::powered(); ?>
-		</div><!-- footer -->
+		</div>
 
 	</div><!-- page -->
 	

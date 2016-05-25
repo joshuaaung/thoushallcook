@@ -25,7 +25,7 @@
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
-	<?php for($i = 0; $i<5; $i++) { ?>
+	<?php for($i = 0; $i<sizeof($ingredient); $i++) { ?>
 		<div class="row">
 	        <?php echo $form->labelEx($ingredient[$i],'['.$i.']'.'Ingredient '.($i+1)); ?>
 	        <?php echo $form->textField($ingredient[$i],'['.$i.']'.'name', array('size'=>30, 'maxlength'=>30)); ?>
@@ -46,7 +46,7 @@
 	<?php } ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::button('Update Recipe', array('submit'=>array('recipe/update', 'id'=>$model->id))); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
