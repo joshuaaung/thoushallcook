@@ -54,19 +54,5 @@
 		</div>
 
 	</div><!-- page -->
-	
-	<!-- jQuery -->
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.easing.min.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.fittext.js"></script>
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/wow.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/creative.js"></script>
 </body>
 </html>

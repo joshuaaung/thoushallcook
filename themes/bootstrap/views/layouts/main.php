@@ -27,49 +27,61 @@
 
 <body>
 
-<div class="container" id="page">
+	<div class="container" id="page">
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+		<div id="header">
+			<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+		</div><!-- header -->
 
-	<nav id="mainNav" class="navbar navbar-fixed-top navbar-inverse">
-		<div class="container">
-			<div class="collapse navbar-collapse">
-			<?php $this->widget('zii.widgets.CMenu',array(
-				'items'=>array(
-					array('label'=>'Home', 'url'=>array('/site/index')),
-					//array('label'=>'About', 'url'=>array('/site/pages/', 'view'=>'about')),
-					//array('label'=>'Contact', 'url'=>array('/site/contact')),
-					//array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-					//array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-					array('label'=>'Recipe', 'url'=>array('/recipe/index'))
-				),
-				'htmlOptions'=>array('class'=>'nav navbar-nav navbar-right')
-			)); ?>
-			</div><!-- collapse navbar-collapse -->
-		</div><!-- container -->
-	</nav><!-- mainNav -->
+		<nav id="mainNav" class="navbar navbar-fixed-top navbar-inverse">
+			<div class="container">
+				<div class="collapse navbar-collapse">
+				<?php $this->widget('zii.widgets.CMenu',array(
+					'items'=>array(
+						array('label'=>'Home', 'url'=>array('/site/index')),
+						//array('label'=>'About', 'url'=>array('/site/pages/', 'view'=>'about')),
+						//array('label'=>'Contact', 'url'=>array('/site/contact')),
+						//array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+						//array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Recipe', 'url'=>array('/recipe/index'))
+					),
+					'htmlOptions'=>array('class'=>'nav navbar-nav navbar-right')
+				)); ?>
+				</div><!-- collapse navbar-collapse -->
+			</div><!-- container -->
+		</nav><!-- mainNav -->
 
-	<section>
-		<?php if(isset($this->breadcrumbs)):?>
-			<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-				'links'=>$this->breadcrumbs,
-			)); ?><!-- breadcrumbs -->
-		<?php endif?>
+		<section>
+			<?php if(isset($this->breadcrumbs)):?>
+				<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+					'links'=>$this->breadcrumbs,
+				)); ?><!-- breadcrumbs -->
+			<?php endif?>
 
-		<?php echo $content; ?>
-	</section>
+			<?php echo $content; ?>
+		</section>
 
-	<div class="clear"></div>
+		<!--
+		<div class="clear"></div>
 
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
+		<div id="footer">
+			Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+			All Rights Reserved.<br/>
+			<?php echo Yii::powered(); ?>
+		</div>
+		-->
 
-</div><!-- page -->
+	</div><!-- page -->
+<!-- Bootstrap Core JavaScript -->
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.easing.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.fittext.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/creative.js"></script>
 
 </body>
 </html>

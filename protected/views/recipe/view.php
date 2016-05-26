@@ -13,21 +13,28 @@ $this->menu=array(
 	array('label'=>'List Recipe', 'url'=>array('index')),
 	array('label'=>'Create Recipe', 'url'=>array('create')),
 	array('label'=>'Update Recipe', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Recipe', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Delete Recipe', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this Recipe?')),
 	//array('label'=>'Manage Recipe', 'url'=>array('admin')),
 );
 ?>
+<div class="container">
+    <div class="row">
+		<div class="col-lg-8 col-lg-offset-2 text-center">
+    		<img src="./images/bacon-burgers-on-brioche-buns.jpg" class="img-circle" alt="img-responsive" width="250" height="250">
+		</div>
 
-<div class="label" >
-	<h1><b><?php echo $model->name; ?></b></h1>
+		<div class="col-lg-8 col-lg-offset-2 text-center" >
+			<h1><b><?php echo $model->name; ?></b></h1>
+		</div>
+	</div>
 </div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-md-6 text-center">
-			<a id='ingredient' class="btn btn-primary btn-sm active"><i class="fa fa-2x fa-pencil-square-o wow bounceIn text-primary" style="color:#fff" data-wow-delay=".3s"></i><h4>Ingredients</h4></a>
+			<a id='ingredient' class="btn btn-primary btn-sm active"><i class="fa fa-2x fa-pencil-square-o wow bounceIn text-primary" style="color:#fff" data-wow-delay=".3s"></i><h6>Ingredients</h6></a>
 		</div>
 		<div class="col-md-6 col-md-6 text-center">
-			<a id='about' class="btn btn-primary btn-sm active"><i class="fa fa-2x fa-info wow bounceIn text-primary" style="color:#fff" data-wow-delay=".3s"></i><h4>About</h4></a>
+			<a id='about' class="btn btn-primary btn-sm active"><i class="fa fa-2x fa-info wow bounceIn text-primary" style="color:#fff" data-wow-delay=".3s"></i><h6>About</h6></a>
 		</div>
 	</div>
 </div>

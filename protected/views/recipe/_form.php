@@ -45,6 +45,14 @@
 	    </div>
 	<?php } ?>
 
+	<!--
+	<div class="row">
+		<?php echo $form->labelEx($model,'image'); ?>
+		<?php echo CHtml::activeFileField($model, 'image'); ?>
+		<?php echo $form->error($model,'image'); ?>
+	</div>
+	-->
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-primary', 'style'=>'margin-left:220px; margin-top:20px; margin-bottom:20px')); ?>
 	</div>

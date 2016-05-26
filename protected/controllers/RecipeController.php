@@ -374,11 +374,21 @@ class RecipeController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$name = $this->loadModel($id)->name;
 		$this->loadModel($id)->delete();
 
+		if(RecipeIngredientQuantityMapping::model()->deleteAllByAttributes(array('recipe_id'=>$id))) {
+			$dataProvider = new CActiveDataProvider('Recipe');
+			Yii::app()->user->setFlash('success', "Recipe ".$name." has been deleted!"); //Flash alert-message with the title:'success', message:"Recipe $name has been deleted" -> it will then be displayed in the index(view)
+			$this->render('index', array('dataProvider'=>$dataProvider));
+		}
+
+		/* DEFAULT */
+		/*
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		*/
 	}
 
 	/**
