@@ -520,23 +520,24 @@ img::-moz-selection {
     background: 0 0;
 }
 
-.techLogo {
-    filter: gray; /* IE6-9 */
-    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
-    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
-
-    -webkit-transition: all 2s; // Chrome
-    -moz-transition: all 2s; // Mozilla
-    -o-transition: all 2s; // Opera
-    transition: all 2s;
-}
-
 #ingredient {
     margin-bottom: 10px;
 }
 
-.operations {
-    display:none;
+.operation {
+    list-style: none;
+    padding: 0px;
+}
+
+/* SideMenu */
+.portlet
+{
+    background-color:#a7d896;
+     border:2px #222 solid;
+     border-radius:10px;
+     padding:.75em;
+     margin:0;
+     margin-bottom: 10px;
 }
 
 body {

@@ -70,13 +70,22 @@ class IngredientController extends Controller
 		if(isset($_POST['Ingredient']))
 		{
 			$model->attributes=$_POST['Ingredient'];
-			if($model->save())
+			if(!$this->isExist($model->name) && $model->save()) {
 				$this->redirect(array('view','id'=>$model->id));
+			} else {
+				Yii::app()->user->setFlash('ingredient_exists', "<b>$model->name</b> is already in the Ingredient bank!"); //Flash alert-message with the title:'success', message:"Recipe $name has been deleted" -> it will then be displayed in the index(view)
+			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
 		));
+	}
+
+	public function isExist($ingredient_name) {
+		$temp_ingredient = Ingredient::model()->findByAttributes(array('name'=>$ingredient_name));
+
+		return $temp_ingredient==null ? false : true;
 	}
 
 	/**
@@ -110,11 +119,19 @@ class IngredientController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+		$name = $this->loadModel($id)->name;
 		$this->loadModel($id)->delete();
 
+		RecipeIngredientQuantityMapping::model()->deleteAllByAttributes(array('ingredient_id'=>$id));
+		$dataProvider = new CActiveDataProvider('Ingredient');
+		Yii::app()->user->setFlash('success_ingredient', "<b>$name</b> has been removed from the Ingredient bank!"); //Flash alert-message with the title:'success', message:"Ingredient $name has been deleted" -> it will then be displayed in the index(view)
+		$this->render('index', array('dataProvider'=>$dataProvider));
+
+		/*
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		*/
 	}
 
 	/**

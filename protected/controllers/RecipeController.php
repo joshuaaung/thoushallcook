@@ -28,7 +28,7 @@ class RecipeController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'addIngredient'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -308,7 +308,7 @@ class RecipeController extends Controller
 		$results = $this->extractDataModel($mapping);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		//$this->performAjaxValidation($model);
 
 		/*Multiple Ingredient inputs*/
 		if(isset($_POST['Ingredient'])) {

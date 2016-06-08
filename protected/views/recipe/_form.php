@@ -25,33 +25,15 @@
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
-	<?php for($i = 0; $i<5; $i++) { ?>
-		<div class="row">
-	        <?php echo $form->labelEx($ingredient,'['.$i.']'.'Ingredient '.($i+1)); ?>
-	        <?php echo $form->textField($ingredient,'['.$i.']'.'name', array('size'=>30, 'maxlength'=>30)); ?>
-	        <?php echo $form->error($ingredient,'['.$i.']'.'name'); ?>
-	    </div>
+	</br>
 
-	    <div class="row">
-	        <?php echo $form->labelEx($mapping_quantity,'['.$i.']'.'Quantity'); ?>
-	        <?php echo $form->textField($mapping_quantity,'['.$i.']'.'quantity', array('size'=>10, 'maxlength'=>10)); ?>
-	        <?php echo $form->error($mapping_quantity,'['.$i.']'.'quantity'); ?>
-	    </div>
-
-	    <div class="row">
-	        <?php echo $form->labelEx($measurement,'['.$i.']'.'Measurement'); ?>
-	        <?php echo $form->textField($measurement,'['.$i.']'.'name', array('size'=>20, 'maxlength'=>20)); ?>
-	        <?php echo $form->error($measurement,'['.$i.']'.'name'); ?>
-	    </div>
-	<?php } ?>
-
-	<!--
 	<div class="row">
-		<?php echo $form->labelEx($model,'image'); ?>
-		<?php echo CHtml::activeFileField($model, 'image'); ?>
-		<?php echo $form->error($model,'image'); ?>
+        <?php echo CHtml::button('Add Ingredient', array('onClick'=>'addIngredient($(".input-wrapper"))', 'class'=>'btn btn-success btn-sm active')); ?>
 	</div>
-	-->
+
+	</br>
+
+	<div class="input-wrapper"></div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-primary', 'style'=>'margin-left:220px; margin-top:20px; margin-bottom:20px')); ?>
@@ -60,3 +42,25 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+
+<script>
+var num_ingredients = 0;
+
+var ingredient = new String(<?php echo CJSON::encode($this->renderPartial('_ingredientForm', array('i'=>'idRep', 'ingredient'=>$ingredient, 'mapping_quantity'=>$mapping_quantity, 'measurement'=>$measurement,'form'=>$form), true));?>);
+
+function addIngredient(wrapper) {
+	num_ingredients++;
+
+	wrapper.append(ingredient.replace(/idRep/g, 'n'+num_ingredients));
+}
+
+function deleteIngredient(wrapper) {
+	num_ingredients--;
+    wrapper.parents('#ingredient_form').detach();
+}
+
+(function($) {
+
+})(jQuery);
+</script>

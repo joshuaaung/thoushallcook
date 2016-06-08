@@ -19,6 +19,13 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
+	<?php if(Yii::app()->user->hasFlash('ingredient_exists')):?> <!-- See if any flash messages with the title 'ingredient_exists' exist in the singleton app() -->
+	    <div class="alert alert-danger alert-dismissible" role="alert">
+	    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <?php echo Yii::app()->user->getFlash('ingredient_exists'); ?>
+	    </div>
+	<?php endif; ?>
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
 		<?php echo $form->textField($model,'name',array('size'=>30,'maxlength'=>30)); ?>
@@ -26,7 +33,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-primary', 'style'=>'margin-left:220px; margin-top:20px; margin-bottom:20px')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

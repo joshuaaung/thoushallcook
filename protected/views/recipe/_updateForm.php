@@ -46,7 +46,7 @@
 	<?php } ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::button('Update Recipe', array('submit'=>array('recipe/update', 'id'=>$model->id))); ?>
+		<?php echo CHtml::button('Update Recipe', array('submit'=>array('recipe/update', 'id'=>$model->id), 'class'=>'btn btn-success', 'style'=>'margin-left:220px; margin-top:20px; margin-bottom:20px')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

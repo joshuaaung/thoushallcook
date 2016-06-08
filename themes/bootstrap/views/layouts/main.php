@@ -22,6 +22,9 @@
     <!-- Font Awesome Icons -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- jQuery -->
+	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.js"></script>
+
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -43,7 +46,8 @@
 						//array('label'=>'Contact', 'url'=>array('/site/contact')),
 						//array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 						//array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-						array('label'=>'Recipe', 'url'=>array('/recipe/index'))
+						array('label'=>'Recipe', 'url'=>array('/recipe/index')),
+						array('label'=>'Ingredient Bank', 'url'=>array('/ingredient/index'))
 					),
 					'htmlOptions'=>array('class'=>'nav navbar-nav navbar-right')
 				)); ?>
@@ -60,7 +64,7 @@
 
 			<?php echo $content; ?>
 		</section>
-
+		
 		<!--
 		<div class="clear"></div>
 
@@ -72,6 +76,7 @@
 		-->
 
 	</div><!-- page -->
+
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
 
