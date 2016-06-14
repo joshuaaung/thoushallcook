@@ -70,6 +70,15 @@ input {
 	border: none;
 }
 
+input.form-control {
+    color: #3CB371;
+    width: 200px;
+    height: 25px;
+    background-color: #F5F5F5;
+    border: none;
+    margin-bottom: 3px;
+}
+
 div.errorSummary ul {
 	display: none;
 }

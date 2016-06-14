@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Recipe Name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'name',array('class'=>'form-control','size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
@@ -47,12 +47,12 @@
 <script>
 var num_ingredients = 0;
 
-var ingredient = new String(<?php echo CJSON::encode($this->renderPartial('_ingredientForm', array('i'=>'idRep', 'ingredient'=>$ingredient, 'mapping_quantity'=>$mapping_quantity, 'measurement'=>$measurement,'form'=>$form), true));?>);
+var ingredient = new String(<?php echo CJSON::encode($this->renderPartial('_ingredientForm', array('i'=>'idPlaceHolder', 'ingredient'=>$ingredient, 'mapping_quantity'=>$mapping_quantity, 'measurement'=>$measurement,'form'=>$form, 'load_data'=>false), true));?>);
 
 function addIngredient(wrapper) {
 	num_ingredients++;
 
-	wrapper.append(ingredient.replace(/idRep/g, 'n'+num_ingredients));
+	wrapper.append(ingredient.replace(/idPlaceHolder/g, 'n'+num_ingredients));
 }
 
 function deleteIngredient(wrapper) {

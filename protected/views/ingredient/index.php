@@ -19,7 +19,7 @@ $this->menu=array(
     </div>
 <?php endif; ?>
 
-<h1>Ingredients</h1>
+<h1 style="margin-bottom: 30px"><small>Ingredients</small></h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

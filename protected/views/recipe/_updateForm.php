@@ -21,30 +21,20 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'Recipe Name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->textField($model,'name',array('class'=>'form-control','size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'name'); ?>
 	</div>
+	
+	</br>
 
-	<?php for($i = 0; $i<sizeof($ingredient); $i++) { ?>
-		<div class="row">
-	        <?php echo $form->labelEx($ingredient[$i],'['.$i.']'.'Ingredient '.($i+1)); ?>
-	        <?php echo $form->textField($ingredient[$i],'['.$i.']'.'name', array('size'=>30, 'maxlength'=>30)); ?>
-	        <?php echo $form->error($ingredient[$i],'['.$i.']'.'name'); ?>
-	    </div>
+	<div class="row">
+        <?php echo CHtml::button('Add Ingredient', array('onClick'=>'addIngredient($(".input-wrapper"))', 'class'=>'btn btn-success btn-sm active')); ?>
+	</div>
 
-	    <div class="row">
-	        <?php echo $form->labelEx($mapping[$i],'['.$i.']'.'Quantity'); ?>
-	        <?php echo $form->textField($mapping[$i],'['.$i.']'.'quantity', array('size'=>10, 'maxlength'=>10)); ?>
-	        <?php echo $form->error($mapping[$i],'['.$i.']'.'quantity'); ?>
-	    </div>
+	</br>
 
-	    <div class="row">
-	        <?php echo $form->labelEx($measurement[$i],'['.$i.']'.'Measurement'); ?>
-	        <?php echo $form->textField($measurement[$i],'['.$i.']'.'name', array('size'=>20, 'maxlength'=>20)); ?>
-	        <?php echo $form->error($measurement[$i],'['.$i.']'.'name'); ?>
-	    </div>
-	<?php } ?>
-
+	<div id="ingredient_input" class="input-wrapper"></div>
+	
 	<div class="row buttons">
 		<?php echo CHtml::button('Update Recipe', array('submit'=>array('recipe/update', 'id'=>$model->id), 'class'=>'btn btn-success', 'style'=>'margin-left:220px; margin-top:20px; margin-bottom:20px')); ?>
 	</div>
@@ -52,3 +42,33 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script>
+var total_ingredients = <?php echo sizeof($ingredient); ?>;
+
+var index = 0;
+
+var new_ingredient = new String(<?php echo CJSON::encode($this->renderPartial('_ingredientForm', array('i'=>'idPlaceHolder', 'ingredient'=>$_ingredient, 'mapping_quantity'=>$_quantity, 'measurement'=>$_measurement,'form'=>$form, 'load_data'=>false), true));?>);
+
+var old_ingredient = new String(<?php echo CJSON::encode($this->renderPartial('_ingredientForm', array('ingredient'=>$ingredient, 'mapping_quantity'=>$mapping_quantity, 'measurement'=>$measurement,'form'=>$form, 'load_data'=>true), true));?>);
+
+function addIngredient(wrapper) {
+	index++;
+	wrapper.append(new_ingredient.replace(/idPlaceHolder/g, 'n'+index));
+}
+
+function deleteIngredient(wrapper) {
+	index--;
+    wrapper.parents('#ingredient_form').detach();
+}
+
+function loadIngredients() {	
+	var divs = old_ingredient.split("</br>");
+
+	for(var i=0; i<total_ingredients; i++){
+		$('.input-wrapper').append(divs[i]);
+	}
+}
+
+window.onload = loadIngredients;
+</script>

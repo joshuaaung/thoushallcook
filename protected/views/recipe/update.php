@@ -18,4 +18,4 @@ $this->menu=array(
 
 <h1>Update Recipe <?php echo $model->name; ?></h1>
 
-<?php $this->renderPartial('_updateForm', array('model'=>$model, 'ingredient'=>$ingredient, 'mapping'=>$mapping, 'measurement'=>$measurement)); ?>
+<?php $this->renderPartial('_updateForm', array('model'=>$model, 'ingredient'=>$ingredient, 'mapping_quantity'=>$mapping, 'measurement'=>$measurement, '_ingredient'=>$_ingredient, '_quantity'=>$_mapping, '_measurement'=>$_measurement)); ?>
