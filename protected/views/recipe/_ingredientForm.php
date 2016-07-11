@@ -2,7 +2,11 @@
 <div id="ingredient_form">
 	<div class="row">
 		<?php echo $form->labelEx($ingredient,"Ingredient"); ?>
-		<?php echo $form->textField($ingredient,"[$i]name", array('class'=>'form-control','size'=>30, 'maxlength'=>30)); ?>
+		<?php #echo $form->textField($ingredient,"[$i]name", array('class'=>'form-control','size'=>30, 'maxlength'=>30)); ?>
+		<div class="row">
+			<?php echo $form->dropDownList($ingredient, "[$i]name", CHtml::listData(Ingredient::model()->findAll(),'name','name')); ?>
+		</div>
+		<div class="row">abcd</div>
 		<?php echo $form->error($ingredient,"[$i]name"); ?>
 	</div>
 

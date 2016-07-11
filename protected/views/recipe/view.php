@@ -20,7 +20,13 @@ $this->menu=array(
 <div class="container">
     <div class="row">
 		<div class="col-lg-8 col-lg-offset-2 text-center">
-    		<img src="./images/bacon-burgers-on-brioche-buns.jpg" class="img-circle" alt="img-responsive" width="250" height="250">
+			<?php 
+			if(!is_null($imageLink)) { 
+    			echo "<img src=$imageLink class='img-circle' alt='img-responsive' width='250' height='250'>";
+    		} else { 
+    			echo "<img src='./protected/images/no_image.png' class='img-circle' alt='img-responsive' width='250' height='250'>";
+    		} 
+    		?>
 		</div>
 
 		<div class="col-lg-8 col-lg-offset-2 text-center" >
@@ -91,4 +97,5 @@ $('#ingredient').on('click', function() {
 $('#about').on('click', function() {
 	$('#aboutPage').slideToggle(300);
 });
+
 </script>

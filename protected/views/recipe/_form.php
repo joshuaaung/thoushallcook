@@ -8,11 +8,14 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'recipe-form',
+	//'action' => '', //specify a particular action which this form to be sent. By Default, this form will be submitted to the 'Create'(look at the submitButton) action in the RecipeController
+	
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -23,6 +26,14 @@
 		<?php echo $form->labelEx($model,'Recipe Name'); ?>
 		<?php echo $form->textField($model,'name',array('class'=>'form-control','size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'name'); ?>
+	</div>
+
+	</br>
+
+	<div class="row">
+		<?php echo $form->labelEx($image,'How does it look?'); ?>
+		<?php echo $form->fileField($image, 'image', array('class'=>'form-control')); ?>
+		<?php echo $form->error($image,'image'); ?>
 	</div>
 
 	</br>

@@ -51,11 +51,27 @@ class RecipeController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
+
+		$imageName=$model->imageName;
+
+		$imageLink=null;
+
+		//Retrieving file link from the s3
+		require Yii::app()->getBasePath().'/vendor/aws_s3/s3_connect.php';
+
+		if(!is_null($imageName)) {
+			$imageLink = $s3->getObjectUrl($s3_config['s3']['bucket'], "images/{$imageName}");
+		}
+
+		//Constructing an array of recipe/ingredients/quantity/measurement details to display
 		$mappings = RecipeIngredientQuantityMapping::model()->findAll(array("condition"=>"recipe_id=$id","order"=>"id")); //Gather All the rows with recipe_id = this recipe id
 		$results = $this->extractData($mappings);
+
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
 			'results'=>$results,
+			'imageLink'=>$imageLink,
 			//'count'=>$count
 		));
 	}
@@ -105,6 +121,8 @@ class RecipeController extends Controller
 		$isOldIngredient = false;
 		$isOldMeasurement = false;
 		
+		$imageName = null;
+
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 		//$this->performAjaxValidation($ingredient);
@@ -173,9 +191,47 @@ class RecipeController extends Controller
         $valid=$model->validate() && $valid;
 		*/
 
+		if(isset($_POST['ImageFileForm']))
+        {
+        	require Yii::app()->getBasePath().'/vendor/aws_s3/s3_connect.php';
+
+        	$file = new ImageFileForm;
+        	$file->image = CUploadedFile::getInstance($file, 'image'); //retrieving and assigning the FILE to the one of the public variable(called $image) in the ImageFileForm
+
+        	if(!is_null($file->image)) {
+	        	//File Details
+	        	$ori_name = $file->image->getName();
+
+	     		$extension = explode('.', $ori_name);
+	     		$extension = strtolower(end($extension));
+
+	     		//Temp Details
+	     		$key = md5(uniqid());
+	     		$temp_file_name = "{$key}.{$extension}"; //hence, unique name for each files
+
+	        	$file->image->saveAs(Yii::app()->getBasePath().'/images/'.$temp_file_name); //Saving the uploaded file at /var/www/html/thoushallcook/protected . /images/ . <temp_file_name.jpg>
+
+	        	//Uploading to s3
+	        	//$s3 and $s3_config variables are available from the s3_connect.php which was imported by < require Yii::app()->getBasePath().'/vendor/aws_s3/s3_connect.php'; >
+
+	    		$s3->putObject([
+	        			'Bucket'=>$s3_config['s3']['bucket'],
+	        			'Key'=>"images/{$temp_file_name}", //so that there are no duplicated filenames in the s3
+	        			'Body'=>fopen(Yii::app()->getBasePath().'/images/'.$temp_file_name, 'rb'),
+	        			'ACL'=>'public-read'
+	    			]);
+
+	        	//Remove the uploaded file from the server
+	        	unlink(Yii::app()->getBasePath().'/images/'.$temp_file_name);
+
+	        	$imageName = $temp_file_name;
+	        }
+        }
+
 		if(isset($_POST['Recipe']))
 		{
 			$model->attributes=$_POST['Recipe'];
+			$model->imageName=$imageName;
 			if($model->save()) {
 				for ($i = 0; $i < count($ingredientModels); $i++){
 					if($ingredientModels[$i] != null && $quantities[$i] != null && $measurementModels[$i] != null)
@@ -190,6 +246,7 @@ class RecipeController extends Controller
 			'ingredient'=>new Ingredient,
 			'mapping_quantity'=>new RecipeIngredientQuantityMapping,
 			'measurement'=>new Measurement,
+			'image'=>new ImageFileForm,
 		));
 	}
 
